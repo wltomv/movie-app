@@ -1,0 +1,11 @@
+@use '../../scss/' as *;
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: white !important;
+    width: 50%;
+}
+
+.hero-slide {
+    margin-bottom: 3rem;
+}

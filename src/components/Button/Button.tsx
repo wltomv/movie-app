@@ -40,4 +40,13 @@ Button.defaultProps = {
     cssClass: '',
 };
 
+OutlineButton.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    cssClass: PropTypes.string,
+};
+
+OutlineButton.defaultProps = {
+    cssClass: '',
+};
+
 export { Button, OutlineButton };

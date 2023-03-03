@@ -1,5 +1,7 @@
 import axiosClient from './axios';
-import { Category, MovieType, TvType } from '../models/movies.model';
+import { TvType } from '../models/tv.models';
+import { Category } from '../models/category.models';
+import { MovieType, IMoviesResponse } from '../models/movies.models';
 
 export const category: Category = {
     movie: 'movie',
@@ -21,7 +23,7 @@ export const tvType: TvType = {
 const tmdbApi = {
     getMoviesList: (type: string, params: object) => {
         const url = `movie/${movieType[type as keyof MovieType]}`;
-        return axiosClient.get(url, params);
+        return axiosClient.get<IMoviesResponse>(url, { params });
     },
     getTvList: (type: string, params: object) => {
         const url = `tv/${tvType[type as keyof TvType]}`;

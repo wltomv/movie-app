@@ -1,4 +1,4 @@
-import axios, { ParamsSerializerOptions } from 'axios';
+import axios from 'axios';
 import queryString from 'query-string';
 
 import apiConfig from './apiConfig';
@@ -9,8 +9,11 @@ const axiosClient = axios.create({
         'Content-type': 'application/json',
     },
     paramsSerializer: {
-        encode: (params) =>
-            queryString.stringify({ ...params, api_key: apiConfig.apiKey }),
+        serialize: (params) =>
+            queryString.stringify({
+                ...params,
+                api_key: apiConfig.apiKey,
+            }),
     },
 });
 

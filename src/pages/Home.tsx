@@ -1,5 +1,7 @@
+import HeroSlide from '../containers/HeroSlide/HeroSlide';
+
 function Home() {
-    return <div>Home</div>;
+    return <HeroSlide />;
 }
 
 export default Home;
