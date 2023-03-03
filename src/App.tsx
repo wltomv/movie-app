@@ -9,13 +9,11 @@ import AppRoutes from './config/AppRoutes';
 
 function App() {
     return (
-        <>
+        <BrowserRouter>
             <Header />
-            <BrowserRouter>
-                <AppRoutes />
-            </BrowserRouter>
+            <AppRoutes />
             <Footer />
-        </>
+        </BrowserRouter>
     );
 }
 
