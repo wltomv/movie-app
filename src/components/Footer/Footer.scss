@@ -1,0 +1,39 @@
+@use '../../scss/' as *;
+
+.footer {
+    position: relative;
+    padding: 6rem 2rem;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background-image: linear-gradient(to bottom, $body-bg, rgba($black, 0));
+    }
+    &__content {
+        max-width: 1000px;
+
+        &__logo {
+            @include flex(center, center);
+            margin-bottom: 3rem;
+        }
+
+        &__menus {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-auto-rows: minmax(auto, auto);
+            gap: 2px;
+
+            a {
+                text-align: center;
+            }
+        }
+    }
+}
