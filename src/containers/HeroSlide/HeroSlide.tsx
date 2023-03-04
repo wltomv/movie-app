@@ -3,7 +3,7 @@ import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import tmdbApi, { movieType } from '../../api/tmdbApi';
 import HeroslideItem from '../../components/HeroSlideItem/HeroSlideItem';
-import { IMovie } from '../../models/Movie.models';
+import { IMovie } from '../../models/movies.models';
 import './HeroSlide.scss';
 
 function HeroSlider() {
@@ -35,7 +35,7 @@ function HeroSlider() {
                 slidesPerView={1}
                 autoplay={{
                     delay: 5000,
-                    // disableOnInteraction: false,
+                    disableOnInteraction: true,
                     reverseDirection: true,
                 }}
                 modules={[Autoplay]}
