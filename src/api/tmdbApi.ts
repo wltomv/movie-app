@@ -18,6 +18,7 @@ export const tvType: TvType = {
     upcoming: 'upcoming',
     popular: 'popular',
     on_the_air: 'on_the_air',
+    top_rated: 'top_rated',
 };
 
 const tmdbApi = {
