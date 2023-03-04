@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
-import { MovieCard, OutlineButton } from '../../components';
+import { MovieCard, MovieSearch, OutlineButton } from '../../components';
 import { IMovie, IMoviesResponse } from '../../models/movies.models';
 import tmdbApi, {
     category as categoryType,
@@ -61,16 +61,20 @@ function MovieGrid({ category }: MovieGridArgs) {
             setTotalPage(response.total_pages);
         };
         getList();
-    }, [getData, page]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [category, keyword]);
 
     const loadMore = async () => {
         const response = await getData(page + 1);
-        setItems([...items, ...response.results]);
+        setItems((_items) => [..._items, ...response.results]);
         setPage((_page) => _page + 1);
     };
 
     return (
         <>
+            <div className="section mb-3 right">
+                <MovieSearch category={category} keyword={keyword || ''} />
+            </div>
             <div className="movie-grid">
                 {items.map((item) => (
                     <MovieCard _category={category} item={item} key={item.id} />

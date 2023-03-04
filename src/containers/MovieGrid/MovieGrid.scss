@@ -1,5 +1,9 @@
 @use '../../scss/' as *;
 
+.right {
+    @include flex(center, flex-end);
+}
+
 .movie-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
