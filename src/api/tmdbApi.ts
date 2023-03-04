@@ -28,7 +28,7 @@ const tmdbApi = {
     },
     getTvList: (type: string, params: object) => {
         const url = `tv/${tvType[type as keyof TvType]}`;
-        return axiosClient.get(url, params);
+        return axiosClient.get<IMoviesResponse>(url, params);
     },
     getVideos: (_category: string, id: string) => {
         const url = `${category[_category as keyof Category]}/${id}/videos`;
